@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J&G Powering Management Up - Portafolio de Inversión</title>
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #0f4c3a;
+            --accent: #d4af37;
+            --text-dark: #333333;
+            --text-light: #f4f6f9;
+            --bg-light: #ffffff;
+            --bg-alt: #f8f9fa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: var(--bg-light);
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo-placeholder {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary);
+            border: 2px dashed var(--primary);
+            padding: 10px 20px;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--text-light);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 25px auto;
+            color: #cbd5e1;
+        }
+
+        .slogan {
+            font-style: italic;
+            color: var(--accent);
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+            margin-top: 8px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .grid-team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .team-card {
+            background-color: var(--bg-alt);
+            border-top: 5px solid var(--secondary);
+            padding: 25px;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .team-card h3 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .team-card .role {
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .grid-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 25px;
+            border-radius: 4px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--accent);
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        .metrics-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        .metrics-table th, .metrics-table td {
+            border: 1px solid #cbd5e1;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .metrics-table th {
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        .metrics-table tr:nth-child(even) {
+            background-color: var(--bg-alt);
+        }
+
+        .pitch-box {
+            background-color: #fef3c7;
+            border-left: 6px solid var(--accent);
+            padding: 25px;
+            border-radius: 4px;
+            margin-top: 30px;
+        }
+
+        .pitch-box h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .references {
+            font-size: 0.9rem;
+            padding-left: 20px;
+            text-indent: -20px;
+        }
+
+        .references li {
+            margin-bottom: 15px;
+            list-style: none;
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: #94a3b8;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-logos {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-logos">
+        <div class="logo-placeholder">Cambridge College</div>
+        <div class="logo-placeholder">J&G Powering Management Up</div>
+    </header>
+
+    <div class="hero">
+        <h1>J&G Powering Management Up</h1>
+        <p>Propuesta de Inversión Estratégica y Caso de Negocios Corporativo: Rescate Técnico, Mentoría Directiva y Optimización de PMO de Alta Complejidad[cite: 1].</p>
+        <div class="slogan">"Gobernanza Predictiva. Rendimiento Sostenible. Valor Asegurado."[cite: 1]</div>
+    </div>
+
+    <div class="container">
+        
+        <section id="resumen">
+            <h2>Resumen Ejecutivo</h2>
+            <p>Las corporaciones que ejecutan macroproyectos en los sectores de infraestructura, energía y manufactura avanzada en el corredor industrial de Texas sufren desvíos críticos latentes[cite: 1]. En promedio, las organizaciones destruyen el 37% del valor de sus planes de negocio debido a fallas invisibles de ejecución operativa (Mankins & Steele, 2005)[cite: 1]. Las oficinas de proyectos (PMOs) tradicionales operan de forma burocrática y aislada de las finanzas y de la alta dirección[cite: 1]. J&G irrumpe en el mercado como una firma consultora boutique premium que fusiona la ingeniería de procesos, la gobernanza predictiva PMP y el modelado analítico de nivel MBA para intervenir y salvar líneas base multimillonarias en tiempo real[cite: 1].</p>
+            
+            <p><strong>Misión:</strong> Potenciar el rendimiento y blindar el valor de las organizaciones mediante la estandarización metodológica, la analítica predictiva y el rescate técnico de proyectos complejos, transformando la incertidumbre operativa en retornos financieros predecibles y de alto impacto[cite: 1].</p>
+            
+            <p><strong>Visión:</strong> Ser reconocidos para el año 2029 como la firma consultora premium líder en el estado de Texas para el rescate y gobernanza integral de proyectos de energía e infraestructura industrial, distinguidos por un modelo de negocio repetible y enfocado en la excelencia de la alta dirección[cite: 1].</p>
+        </section>
+
+        <section id="equipo">
+            <h2>Miembros del Equipo y Gobernanza</h2>
+            <p>La firma adopta un sistema de rotación anual en la presidencia ejecutiva para garantizar la simetría decisional y mitigar riesgos de fatiga ejecutiva, delegando las funciones de soporte (legal, fiscal y marketing digital) en especialistas externos contratados[cite: 1].</p>
+            
+            <div class="grid-team">
+                <div class="team-card">
+                    <h3>Jorge Castro Nino</h3>
+                    <div class="role">Socio Director de Consultoría y Rescate de Proyectos[cite: 1]</div>
+                    <p>Ingeniero Eléctrico y Project Management Professional (PMP) con más de 15 años de experiencia internacional liderando la validación e instalación de soluciones energéticas basadas en turbinas aeroderivadas y procesos complejos de manufactura de alta potencia. Experto en contabilidad avanzada para pequeñas empresas y optimización analítica de proyectos bajo el estándar CMMI[cite: 1].</p>
+                </div>
+                <div class="team-card">
+                    <h3>Giammarco D'Angelo Martínez</h3>
+                    <div class="role">Socio Director de Ingeniería y Arquitectura PMO[cite: 1]</div>
+                    <p>Especialista senior en ingeniería de control y simulación financiera-operativa con amplia trayectoria en el rediseño estructural de Oficinas de Gestión de Proyectos (PMO). Graduado de Master of Business Administration (MBA) enfocado en dirección estratégica y modelado cuantitativo de sensibilidad de capital[cite: 1].</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mercado">
+            <h2>Análisis del Entorno e Intervención</h2>
+            <p>El mercado de servicios profesionales en Texas demanda intervenciones ágiles. Los clientes corporativos del sector industrial se enfrentan a un entorno de alta volatilidad donde la falta de entrenamiento en metodologías predictivas provoca el descarrilamiento ejecutivo de mandos técnicos avanzados[cite: 1].</p>
+            <ul>
+                <li><strong>TAM (Mercado Total Global):</strong> $360,000 millones de USD[cite: 1].</li>
+                <li><strong>SAM (Mercado Direccionable - Américas):</strong> $18,000 millones de USD[cite: 1].</li>
+                <li><strong>SOM (Mercado Capturable Objetivo - Año 3):</strong> $3.5 millones de USD, sustentado en una base real de 15 cuentas corporativas recurrentes y 25 directores técnicos anuales[cite: 1].</li>
+            </ul>
+        </section>
+
+        <section id="servicios">
+            <h2>Portafolio de Servicios Premium</h2>
+            <div class="grid-services">
+                <div class="service-card">
+                    <h3>1. Auditoría Ejecutiva</h3>
+                    <p>Evaluación exprés (2-4 semanas) del nivel de madurez bajo estándares CMMI[cite: 1].</p>
+                </div>
+                <div class="service-card">
+                    <h3>2. Mentoring de Élite</h3>
+                    <p>Programas de inmersión y transferencia de destrezas directivas uno a uno (3-6 meses)[cite: 1].</p>
+                </div>
+                <div class="service-card">
+                    <h3>3. Intervención y Rescate</h3>
+                    <p>Estabilización técnica de desvíos críticos en costos y cronogramas (SPI/CPI < 0.85)[cite: 1].</p>
+                </div>
+                <div class="service-card">
+                    <h3>4. Tercerización Total</h3>
+                    <p>Dirección integral externa y llave en mano mediante PMO-as-a-Service (1-3 años)[cite: 1].</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="finanzas">
+            <h2>Modelado Financiero y Análisis de Riesgo</h2>
+            <p>Apalancados en un modelo de monetización premium y bajo una tasa de descuento (WACC) del 12%, las métricas cuantitativas confirman la solidez del negocio ante escenarios macroeconómicos adversos[cite: 1]:</p>
+            
+            <table class="metrics-table">
+                <thead>
+                    <tr>
+                        <th>Métrica Financiera</th>
+                        <th>Valor Proyectado (36 meses)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Valor Actual Neto (VAN)</strong></td>
+                        <td>$1,420,500 USD[cite: 1]</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tasa Interna de Retorno (TIR)</strong></td>
+                        <td>54%[cite: 1]</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Período de Recuperación (Payback)</strong></td>
+                        <td>14 meses (Punto de equilibrio operativo en Mes 5)[cite: 1]</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Seguro de Responsabilidad Profesional (E&O)</strong></td>
+                        <td>$2.0 Millones de USD de cobertura patrimonial[cite: 1]</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Eficiencia Fiscal en Texas:</strong> Estructura de LLC bajo régimen de transparencia del IRS (Formulario 1065)[cite: 1]. Impuesto debido de <strong>$0.00 USD</strong> en los Años 1 y 2 al facturar por debajo del umbral de exención de <strong>$2.47 millones de dólares</strong> fijado por la Contraloría (Texas Comptroller, 2026)[cite: 1].</p>
+
+            <div class="pitch-box">
+                <h3>Propuesta de Inversión (The Ask)</h3>
+                <p>Buscamos un capital semilla de <strong>$350,000 USD</strong> a cambio de una participación minoritaria preferente en la LLC[cite: 1]. Los fondos financiarán la aceleración del embudo de marketing digital automatizado y el soporte de fondo analítico basado en Inteligencia Artificial[cite: 1]. Esta decisión estratégica mitiga directamente el <em>riesgo de inacción</em> empresarial en el mercado[cite: 1].</p>
+            </div>
+        </section>
+
+        <section id="bibliografia">
+            <h2>Referencias Bibliográficas (APA 7)</h2>
+            <ul class="references">
+                <li>Bagley, C. E. (2024). <i>Managers and the legal environment: Strategies for business</i> (10ª ed.). Cengage Learning[cite: 1].</li>
+                <li>Internal Revenue Service. (2025). <i>Publication 3402: Taxation of limited liability companies</i>. Department of the Treasury[cite: 1].</li>
+                <li>Mankins, M. C., & Steele, R. (2005). Turning great strategy into great performance. <i>Harvard Business Review</i>, 83(7/8), 64-72[cite: 1].</li>
+                <li>Texas Comptroller of Public Accounts. (2026). <i>Franchise tax overview and thresholds for report years</i>. Window on State Government[cite: 1].</li>
+                <li>Zook, C., & Allen, J. (2011). The great repeatable business model. <i>Harvard Business Review</i>, 89(11), 106-114[cite: 1].</li>
+            </ul>
+        </section>
+
+        <section id="ia-report">
+            <h2>Informe de Uso de Inteligencia Artificial</h2>
+            <p>En cumplimiento con las directrices académicas, se declara que se utilizaron herramientas de Inteligencia Artificial exclusivamente para: (1) El procesamiento analítico y cálculo automatizado de las ecuaciones financieras correspondientes al VAN y la TIR[cite: 1]; (2) La optimización sintáctica y corrección gramatical para adecuar la narrativa al estándar léxico exigido a nivel MBA[cite: 1]; y (3) El diseño lógico y la codificación limpia de la presente interfaz web de lectura única[cite: 1].</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 J&G Powering Management Up. Todos los derechos reservados. CCG Capstone Strategic Management[cite: 1].</p>
+    </footer>
+
+</body>
+</html>
