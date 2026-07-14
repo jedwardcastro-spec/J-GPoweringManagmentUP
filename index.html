@@ -28,7 +28,18 @@
             background-color: var(--bg-light);
             text-align: left; /* Alineación a la IZQUIERDA obligatoria en APA7 */
         }
+/* Estilo para Sangría de Primera Línea en Párrafos (APA 7) */
+        p {
+            text-indent: 1.27cm; /* Sangría de 0.5 pulgadas (5 espacios) */
+            margin-bottom: 20px;
+        }
 
+        /* Anular sangría en las listas de referencias bibliográficas para aplicar sangría francesa */
+        .references p {
+            text-indent: -1.27cm; /* Sangría Francesa obligatoria en Bibliografía */
+            padding-left: 1.27cm;
+            margin-bottom: 15px;
+        }
         .header-logos {
             display: flex;
             justify-content: space-between;
@@ -339,7 +350,7 @@
             <p><strong>Eficiencia Fiscal en Texas:</strong> Estructura de LLC bajo régimen de transparencia del IRS (Formulario 1065). Impuesto debido de <strong>$0.00 USD</strong> en los Años 1 y 2 al facturar por debajo del umbral de exención de <strong>$2.47 millones de dólares</strong> fijado por la Contraloría (Texas Comptroller, 2026).</p>
 
             <div class="pitch-box">
-                <h3>Propuesta de Inversión (The Ask)</h3>
+                <h3>Propuesta de Inversión</h3>
                 <p>Buscamos un capital semilla de <strong>$350,000 USD</strong> a cambio de una participación minoritaria preferente en la LLC. Los fondos financiarán la aceleración del embudo de marketing digital automatizado y el soporte de fondo analítico basado en Inteligencia Artificial. Esta decisión estratégica mitiga directamente el <em>riesgo de inacción</em> empresarial en el mercado.</p>
             </div>
         </section>
